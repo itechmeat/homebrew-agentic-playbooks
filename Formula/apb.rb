@@ -1,20 +1,20 @@
 class Apb < Formula
   desc "Local runner for agentic playbooks with an embedded web dashboard and MCP server"
   homepage "https://github.com/itechmeat/agentic-playbooks"
-  version "0.11.0"
+  version "0.12.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.11.0/apb-aarch64-apple-darwin.tar.xz"
-      sha256 "34fc329f237b7eaad03fdf01de7420d9b97729862e1399dd602fda7959982798"
+      url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.12.0/apb-aarch64-apple-darwin.tar.xz"
+      sha256 "5f00e0f9a6b000efccfedf0b37b584f12df3300d886a62e53b6d47bfa00ae664"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.11.0/apb-x86_64-apple-darwin.tar.xz"
-      sha256 "1fa47da6c11fadd8c9ee3dcec483c8a710a5a7a99da3eae299c73eb1121ed74a"
+      url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.12.0/apb-x86_64-apple-darwin.tar.xz"
+      sha256 "3011d62e41753737cfbe2050ea646dca88f56b6c9b0507c4a8eb5aa497c1636e"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.11.0/apb-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "56515c50ad0f76cc4404dd56bb24282d536ae8f0f8dc8c4b10c91c1e62a9ecbf"
+    url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.12.0/apb-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "09993a04e06c3657abc003f4699ac65e343b2b2f8312fc59b6e8579e1e88ee60"
   end
   license "Apache-2.0"
 

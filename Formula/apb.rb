@@ -1,20 +1,20 @@
 class Apb < Formula
   desc "Local runner for agentic playbooks with an embedded web dashboard and MCP server"
   homepage "https://github.com/itechmeat/agentic-playbooks"
-  version "0.15.0"
+  version "0.16.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.15.0/apb-aarch64-apple-darwin.tar.xz"
-      sha256 "bbc00e52bbc26c932f305a592245701fba4f3f97b5ba199434c80bd86ef97dbe"
+      url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.16.0/apb-aarch64-apple-darwin.tar.xz"
+      sha256 "8966bfdbc4b9ebce6c8f9b6875c2415e1452241dd12d9543c50d80c124fa2fa3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.15.0/apb-x86_64-apple-darwin.tar.xz"
-      sha256 "892437d0ac6726d6940896eb34ab57c6dc4456e25fd935d226cd1c229c33f2db"
+      url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.16.0/apb-x86_64-apple-darwin.tar.xz"
+      sha256 "aeb802fe4c9ec354eb54e6f2b0110d340edc5bcb3730162b8dc30b7629dcc2cd"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.15.0/apb-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "d19b50baec3e16ffa2572eb146cbadb446bea21cd6be337428d89c824764ac31"
+    url "https://github.com/itechmeat/agentic-playbooks/releases/download/v0.16.0/apb-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "8d2f95d9098ca6495008620f789bbe5119bbd933a0644250642764531ec6a4ad"
   end
   license "Apache-2.0"
 
@@ -42,9 +42,15 @@ class Apb < Formula
   end
 
   def install
-    bin.install "apb" if OS.mac? && Hardware::CPU.arm?
-    bin.install "apb" if OS.mac? && Hardware::CPU.intel?
-    bin.install "apb" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "apb"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "apb"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "apb"
+    end
 
     install_binary_aliases!
 
